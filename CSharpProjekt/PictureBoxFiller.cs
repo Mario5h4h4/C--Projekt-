@@ -21,12 +21,11 @@ namespace CSharpProjekt
 
         private void DownloadFinished(object sender, EventArgs e)
         {
-            for (int i = 0; i < ta.conWrap.filepaths.ToArray().Length && i < PBs.Length; i++)
+            for (int i = ta.conWrap.offset; i < ta.conWrap.filepaths.ToArray().Length && i < PBs.Length && i < ta.conWrap.limit; i++)
             {
                 if (ta.conWrap.filepaths.ToArray()[i] != null)
                 {
                     PBs[i].ImageLocation = ta.conWrap.filepaths.ToArray()[i];
-                   // PBs[i].Refresh(); //Not allowed to call this from another Thread than the one it was created in
                 }
             }
         }

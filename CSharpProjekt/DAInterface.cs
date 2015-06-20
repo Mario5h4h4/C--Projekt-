@@ -44,6 +44,8 @@ namespace CSharpProjekt
         private string clientID = "2709";
         private string clientSecret = "620053b188693f93ba78a51093da65d5";
 
+        private readonly object o = new object();
+
         /// <summary>
         /// authenticates this app using client_id and client_secret at deviantart, so we may get stuff from their api
         /// </summary>
@@ -127,11 +129,15 @@ namespace CSharpProjekt
         public string downloadThumbnail(DAImage dai)
         {
             string filedir = "thumb_" + dai.d_ID + dai.filetype;
-            while (webclient.IsBusy)
+            lock (o)
             {
-                Thread.Sleep(20);
+                while (webclient.IsBusy)
+                {
+                    Monitor.Wait(o);
+                }
+                webclient.DownloadFile(new Uri(dai.thumbnail_url), filedir);
+                Monitor.Pulse(o);
             }
-            webclient.DownloadFileAsync(new Uri(dai.thumbnail_url), filedir);
             return filedir;
         }
 

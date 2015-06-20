@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
+using System.Net;
 
 namespace CSharpProjekt
 {
@@ -48,9 +49,13 @@ namespace CSharpProjekt
                     {
                         t.Start();
                     }
-                    catch (TimeoutException e)
+                    catch (TimeoutException te)
                     {
-                        MessageBox.Show("No connection could be etablished");
+                        MessageBox.Show("No connection could be etablished:\n" + te.Message);
+                    }
+                    catch (WebException we)
+                    {
+                        MessageBox.Show("An Error occured while downloading metadata:\n" + we.Message);
                     }
                     break;
                 case 1:

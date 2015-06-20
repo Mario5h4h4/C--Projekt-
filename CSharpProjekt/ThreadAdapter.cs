@@ -37,7 +37,15 @@ namespace CSharpProjekt
                     conWrap.imageList = null;
                     throw new TimeoutException();
                 }
-            conWrap.imageList = DAInterface.Instance.getHotImages(conWrap.offset, conWrap.limit);
+            try
+            {
+                conWrap.imageList = DAInterface.Instance.getHotImages(conWrap.offset, conWrap.limit);
+            }
+            catch (System.Net.WebException we)
+            {
+                System.Windows.Forms.MessageBox.Show("Error: " + we.Message);
+                Console.Error.WriteLine(we.StackTrace);
+            }
             foreach (DAImage dai in conWrap.imageList) {
                 conWrap.filepaths.Add(DAInterface.Instance.downloadThumbnail(dai));
             }
