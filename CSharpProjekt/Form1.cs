@@ -39,7 +39,7 @@ namespace CSharpProjekt
                 for (int j = 0; j < elemCount; j++)
                 {
                     picBoxes[i][j] = new PictureBox();
-                    picBoxes[i][j].MinimumSize = new Size((LayoutMap[i].Width / 6) - 8, (LayoutMap[i].Height / 3) - 8);
+                    picBoxes[i][j].Size = new Size((LayoutMap[i].Width / 6) - 8, (LayoutMap[i].Height / 3) - 8);
                     LayoutMap[i].Controls.Add(picBoxes[i][j]);
                 }
                     picBoxFiller[i] = new PictureBoxFiller(thrAdapter[i], picBoxes[i]);
@@ -65,6 +65,7 @@ namespace CSharpProjekt
             if (tabbed_views.SelectedIndex < 2)
             {
                 Thread t = new Thread(thrStarts[tabbed_views.SelectedIndex]);
+                t.Start();
             }
 
             /*

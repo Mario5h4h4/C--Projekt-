@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CSharpProjekt
 
 {
-    public delegate void DownloadFinishedHandler(object sender, EventArgs e);
+    public delegate void DownloadFinishedHandler(object sender, DownloadFinishedEventArgs e);
 
     /// <summary>
     /// For threads, we need a void foo(void); function.
@@ -36,7 +36,7 @@ namespace CSharpProjekt
         /// fire event if not null
         /// </summary>
         /// <param name="e">EventArgs. not really needed here</param>
-        private void onDownloadFinished(EventArgs e)
+        private void onDownloadFinished(DownloadFinishedEventArgs e)
         {
             if (downLoadFinished != null)
                 downLoadFinished(this, e);
@@ -65,12 +65,22 @@ namespace CSharpProjekt
                 Console.Error.WriteLine(we.StackTrace);
             }
             //We download the small image files (thumbnails) here.
-            foreach (DAImage dai in conWrap.imageList) {
-                conWrap.filepaths.Add(DAInterface.Instance.downloadThumbnail(dai));
+            for (int i = conWrap.offset; i < conWrap.offset + conWrap.imageList.Count; i++)
+            {
+                DAImage dai = conWrap.imageList.ToArray()[i];
+                try
+                {
+                    string path = DAInterface.Instance.downloadThumbnail(dai);
+                    conWrap.filepaths.Add(path);
+                    //rather than sending an event when all images were downloaded, an event is fired
+                    //after each image, so user may see progress even with a slow connection
+                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, path));
+                }
+                catch (System.Net.WebException we)
+                {
+                    Console.Error.WriteLine(we.StackTrace);
+                }
             }
-            //This event notifies that all Images are downloaded,
-            //this should lead to the PictureBoxes being filled
-            onDownloadFinished(EventArgs.Empty);
         }
 
         /// <summary>
@@ -92,17 +102,27 @@ namespace CSharpProjekt
             }
             catch (System.Net.WebException we)
             {
-                System.Windows.Forms.MessageBox.Show("Error: " + we.Message);
+               // System.Windows.Forms.MessageBox.Show("Error: " + we.Message);
                 Console.Error.WriteLine(we.StackTrace);
             }
+
             //We download the small image files (thumbnails) here.
-            foreach (DAImage dai in conWrap.imageList)
+            for (int i = conWrap.offset; i < conWrap.offset + conWrap.imageList.Count; i++)
             {
-                conWrap.filepaths.Add(DAInterface.Instance.downloadThumbnail(dai));
+                DAImage dai = conWrap.imageList.ToArray()[i];
+                try
+                {
+                    string path = DAInterface.Instance.downloadThumbnail(dai);
+                    conWrap.filepaths.Add(path);
+                    //rather than sending an event when all images were downloaded, an event is fired
+                    //after each image, so user may see progress even with a slow connection
+                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, path));
+                }
+                catch (System.Net.WebException we)
+                {
+                    Console.Error.WriteLine(we.StackTrace);
+                }
             }
-            //This event notifies that all Images are downloaded,
-            //this should lead to the PictureBoxes being filled
-            onDownloadFinished(EventArgs.Empty);
         }
 
         public void getSearch()

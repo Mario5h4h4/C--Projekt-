@@ -29,18 +29,9 @@ namespace CSharpProjekt
             this.ta.downLoadFinished += this.DownloadFinished;
         }
 
-        private void DownloadFinished(object sender, EventArgs e)
+        private void DownloadFinished(object sender, DownloadFinishedEventArgs e)
         {
-            //To avoid error, check if 'i' is smaller than the length of each Array,
-            //and limit is the max amount if images we're showing at once (should always be 18)
-            //It might happen that filepaths.Length is smaller than 18, due to non-downloadable content
-            for (int i = ta.conWrap.offset; i < ta.conWrap.filepaths.ToArray().Length && i < PBs.Length && i < ta.conWrap.limit; i++)
-            {
-                if (ta.conWrap.filepaths.ToArray()[i] != null)
-                {
-                    PBs[i].ImageLocation = ta.conWrap.filepaths.ToArray()[i];
-                }
-            }
+            PBs[e.picBoxIndex].LoadAsync(e.path);
         }
     }
 }
