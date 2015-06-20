@@ -37,8 +37,16 @@ namespace CSharpProjekt
 
         }
 
+        /// <summary>
+        /// This method is called when the user selects another Tab that the current one.
+        /// </summary>
+        /// <param name="sender">sender of the event</param>
+        /// <param name="e">EventArgs, not used here</param>
         private void tabbed_views_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //currently thinking about making an ThreadAdapter Array instead of making a new Object
+            //at every call. Should be possible thanks to using ContentWrapper and the behavior of references.
+            //Also applicable for pbHot, PictureBoxFiller and even ThreadStart.
             switch (tabbed_views.SelectedIndex)
             {
                 case 0:
