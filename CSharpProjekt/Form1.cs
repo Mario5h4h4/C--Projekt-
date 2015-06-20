@@ -28,11 +28,6 @@ namespace CSharpProjekt
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void hot_flow_layout_Paint(object sender, PaintEventArgs e)
         {
 
