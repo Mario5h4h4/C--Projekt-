@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Threading;
 using Newtonsoft.Json;
 using CSharpProjekt.JsonReceiver;
 
@@ -40,16 +41,19 @@ namespace CSharpProjekt
 
         private string accessToken;
 
+        private string clientID = "2709";
+        private string clientSecret = "620053b188693f93ba78a51093da65d5";
+
         /// <summary>
         /// authenticates this app using client_id and client_secret at deviantart, so we may get stuff from their api
         /// </summary>
         /// <returns>true on successful authentication</returns>
-        private bool authenticate()
+        public bool authenticate()
         {
             //no differentiation between exceptions. if anything happens, return false;
             try
             {
-                HttpWebRequest request = WebRequest.CreateHttp("https://www.deviantart.com/oauth2/token?client_id=" + "" + "&client_secret=" + "" + "&grant_type=client_credentials");
+                HttpWebRequest request = WebRequest.CreateHttp("https://www.deviantart.com/oauth2/token?client_id=" + clientID + "&client_secret=" + clientSecret + "&grant_type=client_credentials");
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream inStr = response.GetResponseStream();
                 StreamReader strRead = new StreamReader(inStr);
@@ -74,7 +78,7 @@ namespace CSharpProjekt
         /// checks if we still are authenticated on DeviantArt.com
         /// </summary>
         /// <returns>true if still authenticated</returns>
-        private bool checkAuthentication()
+        public bool checkAuthentication()
         {
             JsonPlacebo placebo = null;
             //no differentiation between exceptions, if anything happens, just return false.
@@ -108,7 +112,26 @@ namespace CSharpProjekt
         public string downloadImage(DAImage dai)
         {
             string filedir = dai.d_ID + dai.filetype;
-            webclient.DownloadFile(dai.img_url, filedir);
+            while (webclient.IsBusy)
+            {
+                Thread.Sleep(20);
+            }
+            webclient.DownloadFileAsync(new Uri(dai.img_url), filedir);
+            return filedir;
+        }
+
+        /// <summary>
+        /// download the thumbnail located at dai.thumbnail_url
+        /// </summary>
+        /// <param name="dai">DAImage class containing core information about a deviation</param>
+        public string downloadThumbnail(DAImage dai)
+        {
+            string filedir = "thumb_" + dai.d_ID + dai.filetype;
+            while (webclient.IsBusy)
+            {
+                Thread.Sleep(20);
+            }
+            webclient.DownloadFileAsync(new Uri(dai.thumbnail_url), filedir);
             return filedir;
         }
 
