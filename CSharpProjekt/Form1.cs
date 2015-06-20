@@ -14,14 +14,15 @@ namespace CSharpProjekt
     public partial class Form1 : Form
     {
         private PictureBox[] pbHot;
+        private const int elemCount = 18;
         public Form1()
         {
             InitializeComponent();
             this.tabbed_views.SelectedIndexChanged += new System.EventHandler(this.tabbed_views_SelectedIndexChanged);
-            pbHot = new PictureBox[16];
-            for (int i = 0; i < 16; i++) {
+            pbHot = new PictureBox[elemCount];
+            for (int i = 0; i < elemCount; i++) {
                 pbHot[i] = new PictureBox();
-                pbHot[i].MinimumSize = new Size(this.hot_tab_page.Width / 4 - 1, this.hot_tab_page.Height / 4 - 1);
+                pbHot[i].MinimumSize = new Size((this.hot_tab_page.Width / 6) - 10, (this.hot_tab_page.Height / 3) - 10);
                 this.hot_flow_layout.Controls.Add(pbHot[i]);
 
             }
@@ -42,7 +43,7 @@ namespace CSharpProjekt
             switch (tabbed_views.SelectedIndex)
             {
                 case 0:
-                    ContentWrapper cw = new ContentWrapper(0, 16);
+                    ContentWrapper cw = new ContentWrapper(0, elemCount);
                     ThreadAdapter ta = new ThreadAdapter(cw);
                     PictureBoxFiller pbf = new PictureBoxFiller(ta, pbHot);
                     Thread t = new Thread(new ThreadStart(ta.getHot));

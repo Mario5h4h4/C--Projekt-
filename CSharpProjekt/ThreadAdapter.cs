@@ -39,7 +39,7 @@ namespace CSharpProjekt
                 }
             conWrap.imageList = DAInterface.Instance.getHotImages(conWrap.offset, conWrap.limit);
             foreach (DAImage dai in conWrap.imageList) {
-                conWrap.filepaths.Add(DAInterface.Instance.downloadImage(dai));
+                conWrap.filepaths.Add(DAInterface.Instance.downloadThumbnail(dai));
             }
             onDownloadFinished(EventArgs.Empty);
         }

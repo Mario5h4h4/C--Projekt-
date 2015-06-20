@@ -153,9 +153,12 @@ namespace CSharpProjekt
             JsonDeviationList deviList = JsonConvert.DeserializeObject<JsonDeviationList>(strRead.ReadToEnd());
             foreach (JsonDeviation devi in deviList.results) 
             {
-                ldai.Add(new DAImage(devi.deviationid, devi.title, 
-                    devi.category, devi.author.username, 
-                    devi.content, devi.thumbs[0].src));
+                if (devi.content != null)
+                {
+                    ldai.Add(new DAImage(devi.deviationid, devi.title,
+                        devi.category, devi.author.username,
+                        devi.content, devi.thumbs[0].src));
+                }
             }
             return ldai;
             //TODO: error/exception handling.

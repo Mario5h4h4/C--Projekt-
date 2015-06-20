@@ -56,7 +56,7 @@
             this.tabbed_views.Location = new System.Drawing.Point(0, 0);
             this.tabbed_views.Name = "tabbed_views";
             this.tabbed_views.SelectedIndex = 0;
-            this.tabbed_views.Size = new System.Drawing.Size(716, 664);
+            this.tabbed_views.Size = new System.Drawing.Size(857, 561);
             this.tabbed_views.TabIndex = 0;
             // 
             // hot_tab_page
@@ -65,7 +65,7 @@
             this.hot_tab_page.Location = new System.Drawing.Point(4, 22);
             this.hot_tab_page.Name = "hot_tab_page";
             this.hot_tab_page.Padding = new System.Windows.Forms.Padding(3);
-            this.hot_tab_page.Size = new System.Drawing.Size(708, 638);
+            this.hot_tab_page.Size = new System.Drawing.Size(849, 535);
             this.hot_tab_page.TabIndex = 0;
             this.hot_tab_page.Text = "Hot Deviations";
             this.hot_tab_page.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             this.hot_flow_layout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hot_flow_layout.Location = new System.Drawing.Point(3, 3);
             this.hot_flow_layout.Name = "hot_flow_layout";
-            this.hot_flow_layout.Size = new System.Drawing.Size(702, 632);
+            this.hot_flow_layout.Size = new System.Drawing.Size(843, 529);
             this.hot_flow_layout.TabIndex = 0;
             this.hot_flow_layout.Paint += new System.Windows.Forms.PaintEventHandler(this.hot_flow_layout_Paint);
             // 
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 664);
+            this.ClientSize = new System.Drawing.Size(857, 561);
             this.Controls.Add(this.tabbed_views);
             this.Name = "Form1";
             this.Text = "Deviantart Browser";
