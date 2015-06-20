@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CSharpProjekt
 {
-
+    /// <summary>
+    /// A helper class, containing important informations for the ThreadAdapter to use.
+    /// Easier than putting every single variable into the Contructor of ThreadAdapter
+    /// </summary>
     class ContentWrapper
     {
         public List<DAImage> imageList;
@@ -23,11 +26,6 @@ namespace CSharpProjekt
         {
             offset = o;
             limit = l;
-        }
-
-        public List<DAImage> getImageList()
-        {
-            return imageList;
         }
     }
 }
