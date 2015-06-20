@@ -15,6 +15,8 @@ namespace CSharpProjekt
     {
         private PictureBox[] pbHot;
         private const int elemCount = 18;
+        private ContentWrapper[] ConWraps = new ContentWrapper[3];
+        private int[] offsets = { 0, 0, 0 };
         public Form1()
         {
             InitializeComponent();
@@ -24,8 +26,9 @@ namespace CSharpProjekt
                 pbHot[i] = new PictureBox();
                 pbHot[i].MinimumSize = new Size((this.hot_tab_page.Width / 6) - 10, (this.hot_tab_page.Height / 3) - 10);
                 this.hot_flow_layout.Controls.Add(pbHot[i]);
-
             }
+            for (int i = 0; i < ConWraps.Length; i++)
+                ConWraps[i] = new ContentWrapper(offsets[i], elemCount);
         }
 
         private void hot_flow_layout_Paint(object sender, PaintEventArgs e)
@@ -38,11 +41,17 @@ namespace CSharpProjekt
             switch (tabbed_views.SelectedIndex)
             {
                 case 0:
-                    ContentWrapper cw = new ContentWrapper(0, elemCount);
-                    ThreadAdapter ta = new ThreadAdapter(cw);
+                    ThreadAdapter ta = new ThreadAdapter(ConWraps[tabbed_views.SelectedIndex]);
                     PictureBoxFiller pbf = new PictureBoxFiller(ta, pbHot);
                     Thread t = new Thread(new ThreadStart(ta.getHot));
-                    t.Start();
+                    try
+                    {
+                        t.Start();
+                    }
+                    catch (TimeoutException e)
+                    {
+                        MessageBox.Show("No connection could be etablished");
+                    }
                     break;
                 case 1:
                     break;
