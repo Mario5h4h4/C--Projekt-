@@ -72,5 +72,42 @@ namespace CSharpProjekt
             //this should lead to the PictureBoxes being filled
             onDownloadFinished(EventArgs.Empty);
         }
+
+        /// <summary>
+        /// the wrapper function for DAInterface.getNewestImages, as well as DAInterface.downloadThumbnail
+        /// </summary>
+        public void getNew()
+        {
+            //If authentication goes wrong, we probably have no connection, or our keys for the API are bad
+            if (!DAInterface.Instance.checkAuthentication())
+                if (!DAInterface.Instance.authenticate())
+                {
+                    conWrap.imageList = null;
+                    throw new TimeoutException();
+                }
+            //WebException might happen in getHotImages
+            try
+            {
+                conWrap.imageList = DAInterface.Instance.getNewestImages(conWrap.offset, conWrap.limit);
+            }
+            catch (System.Net.WebException we)
+            {
+                System.Windows.Forms.MessageBox.Show("Error: " + we.Message);
+                Console.Error.WriteLine(we.StackTrace);
+            }
+            //We download the small image files (thumbnails) here.
+            foreach (DAImage dai in conWrap.imageList)
+            {
+                conWrap.filepaths.Add(DAInterface.Instance.downloadThumbnail(dai));
+            }
+            //This event notifies that all Images are downloaded,
+            //this should lead to the PictureBoxes being filled
+            onDownloadFinished(EventArgs.Empty);
+        }
+
+        public void getSearch()
+        {
+
+        }
     }
 }

@@ -14,22 +14,39 @@ namespace CSharpProjekt
 {
     public partial class Form1 : Form
     {
-        private PictureBox[] pbHot;
+        private PictureBox[][] picBoxes = new PictureBox[3][];
         private const int elemCount = 18;
         private ContentWrapper[] ConWraps = new ContentWrapper[3];
+        private ThreadAdapter[] thrAdapter = new ThreadAdapter[3];
+        private PictureBoxFiller[] picBoxFiller = new PictureBoxFiller[3];
+        private ThreadStart[] thrStarts = new ThreadStart[3];
         private int[] offsets = { 0, 0, 0 };
+        private Dictionary<int, FlowLayoutPanel> LayoutMap = new Dictionary<int, FlowLayoutPanel>();
         public Form1()
         {
             InitializeComponent();
             this.tabbed_views.SelectedIndexChanged += new System.EventHandler(this.tabbed_views_SelectedIndexChanged);
-            pbHot = new PictureBox[elemCount];
-            for (int i = 0; i < elemCount; i++) {
-                pbHot[i] = new PictureBox();
-                pbHot[i].MinimumSize = new Size((this.hot_tab_page.Width / 6) - 10, (this.hot_tab_page.Height / 3) - 10);
-                this.hot_flow_layout.Controls.Add(pbHot[i]);
-            }
-            for (int i = 0; i < ConWraps.Length; i++)
+
+            //Initializing all of the Arrays above here
+            LayoutMap[0] = this.hot_flow_layout;
+            LayoutMap[1] = this.newest_flow_layout;
+            LayoutMap[2] = this.search_flow_layout;
+            for (int i = 0; i < 3; i++)
+            {
+                picBoxes[i] = new PictureBox[elemCount];
                 ConWraps[i] = new ContentWrapper(offsets[i], elemCount);
+                thrAdapter[i] = new ThreadAdapter(ConWraps[i]);
+                for (int j = 0; j < elemCount; j++)
+                {
+                    picBoxes[i][j] = new PictureBox();
+                    picBoxes[i][j].MinimumSize = new Size((LayoutMap[i].Width / 6) - 8, (LayoutMap[i].Height / 3) - 8);
+                    LayoutMap[i].Controls.Add(picBoxes[i][j]);
+                }
+                    picBoxFiller[i] = new PictureBoxFiller(thrAdapter[i], picBoxes[i]);
+            }
+            thrStarts[0] = new ThreadStart(thrAdapter[0].getHot);
+            thrStarts[1] = new ThreadStart(thrAdapter[1].getNew);
+            thrStarts[2] = new ThreadStart(thrAdapter[2].getSearch);
         }
 
         private void hot_flow_layout_Paint(object sender, PaintEventArgs e)
@@ -44,6 +61,13 @@ namespace CSharpProjekt
         /// <param name="e">EventArgs, not used here</param>
         private void tabbed_views_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Solution with many Arrays, but less temporary Objects, probably making the program faster
+            if (tabbed_views.SelectedIndex < 2)
+            {
+                Thread t = new Thread(thrStarts[tabbed_views.SelectedIndex]);
+            }
+
+            /*
             //currently thinking about making an ThreadAdapter Array instead of making a new Object
             //at every call. Should be possible thanks to using ContentWrapper and the behavior of references.
             //Also applicable for pbHot, PictureBoxFiller and even ThreadStart.
@@ -74,7 +98,7 @@ namespace CSharpProjekt
                     break;
                 default: 
                     break;
-            }
+            }*/
         }
     }
 }
