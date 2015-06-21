@@ -142,6 +142,11 @@ namespace CSharpProjekt
                 //maybe use AddAll instead? look at getHot
                 conWrap.imageList = DAInterface.Instance.getImagesByTag(conWrap.queryTerm, conWrap.offset, conWrap.limit);
             }
+            catch (Newtonsoft.Json.JsonSerializationException jse)
+            {
+                System.Windows.Forms.MessageBox.Show("No images were found");
+                return;
+            }
             catch (System.Net.WebException we)
             {
                 // System.Windows.Forms.MessageBox.Show("Error: " + we.Message);

@@ -218,14 +218,7 @@ namespace CSharpProjekt
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader strRead = new StreamReader(response.GetResponseStream());
             JsonDeviationList deviList = null;
-            try
-            {
-                deviList = JsonConvert.DeserializeObject<JsonDeviationList>(strRead.ReadToEnd());
-            }
-            catch (JsonSerializationException jse)
-            {
-                return null;
-            }
+            deviList = JsonConvert.DeserializeObject<JsonDeviationList>(strRead.ReadToEnd());
             foreach (JsonDeviation devi in deviList.results)
             {
                 if (devi.content != null)

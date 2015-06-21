@@ -116,7 +116,7 @@
             // 
             this.search_flow_layout.Location = new System.Drawing.Point(8, 32);
             this.search_flow_layout.Name = "search_flow_layout";
-            this.search_flow_layout.Size = new System.Drawing.Size(692, 598);
+            this.search_flow_layout.Size = new System.Drawing.Size(833, 598);
             this.search_flow_layout.TabIndex = 2;
             // 
             // button1

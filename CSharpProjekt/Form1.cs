@@ -112,9 +112,18 @@ namespace CSharpProjekt
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ConWraps[2].queryTerm = textBox1.Text;
+            ConWraps[2].queryTerm = this.removeWhitespace(textBox1.Text);
             Thread t = new Thread(thrStarts[2]);
             t.Start();
         }
+
+        //simply removes all Whitespace. Needed for getImagesByTag:
+        //Tags do not contain Whitespace Characters
+        private string removeWhitespace(string input)
+        {
+            return new string(input.Where(c => !Char.IsWhiteSpace(c))
+                .ToArray());
+        }
+
     }
 }
