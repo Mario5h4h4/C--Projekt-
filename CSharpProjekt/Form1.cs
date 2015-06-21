@@ -131,5 +131,31 @@ namespace CSharpProjekt
                 .ToArray());
         }
 
+        //tested if we could create a new Form from within this one.
+        //succeeded with new Thread
+        /*
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            new Thread(new ThreadStart(loadImageForm)).Start();
+        }
+        */
+        //experiments with invoke
+        /*private delegate void foo();
+        private delegate void oof(Form f);
+        private void setVisible(Form f)
+        {
+            f.Visible = true;
+        }*/
+        private void loadImageForm()
+        {
+            ImageForm imgform = new ImageForm(this);
+            //this.AddOwnedForm(imgform);
+            Application.Run(imgform);
+            //foo f = new foo(this.OwnedForms[0].Activate);
+            //oof o = new oof(this.setVisible);
+            //imgform.Invoke(f);
+            //imgform.Invoke(o, new object[] { imgform });
+        }
+
     }
 }
