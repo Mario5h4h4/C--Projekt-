@@ -47,6 +47,14 @@ namespace CSharpProjekt
             thrStarts[0] = new ThreadStart(thrAdapter[0].getHot);
             thrStarts[1] = new ThreadStart(thrAdapter[1].getNew);
             thrStarts[2] = new ThreadStart(thrAdapter[2].getSearch);
+
+            textBox1.KeyPress += textBox1_KeyPress;
+        }
+
+        void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                this.button1_Click(sender, EventArgs.Empty);
         }
 
         private void hot_flow_layout_Paint(object sender, PaintEventArgs e)
@@ -100,6 +108,13 @@ namespace CSharpProjekt
                 default: 
                     break;
             }*/
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConWraps[2].queryTerm = textBox1.Text;
+            Thread t = new Thread(thrStarts[2]);
+            t.Start();
         }
     }
 }

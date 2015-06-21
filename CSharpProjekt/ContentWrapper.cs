@@ -16,6 +16,7 @@ namespace CSharpProjekt
         public List<string> filepaths = new List<string>();
         public int offset;
         public int limit;
+        public string queryTerm;
         public ContentWrapper(int o, int l)
         {
             offset = o;
@@ -26,6 +27,13 @@ namespace CSharpProjekt
         {
             offset = o;
             limit = l;
+        }
+
+        public void setOffsetLimitQuery(int o, int l, string query)
+        {
+            offset = o;
+            limit = l;
+            queryTerm = query;
         }
     }
 }

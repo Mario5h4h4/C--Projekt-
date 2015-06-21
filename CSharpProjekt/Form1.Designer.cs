@@ -86,7 +86,7 @@
             this.newest_tab_page.Location = new System.Drawing.Point(4, 22);
             this.newest_tab_page.Name = "newest_tab_page";
             this.newest_tab_page.Padding = new System.Windows.Forms.Padding(3);
-            this.newest_tab_page.Size = new System.Drawing.Size(708, 638);
+            this.newest_tab_page.Size = new System.Drawing.Size(849, 535);
             this.newest_tab_page.TabIndex = 1;
             this.newest_tab_page.Text = "Newest";
             this.newest_tab_page.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             this.newest_flow_layout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newest_flow_layout.Location = new System.Drawing.Point(3, 3);
             this.newest_flow_layout.Name = "newest_flow_layout";
-            this.newest_flow_layout.Size = new System.Drawing.Size(702, 632);
+            this.newest_flow_layout.Size = new System.Drawing.Size(843, 529);
             this.newest_flow_layout.TabIndex = 0;
             // 
             // tag_search_tab_page
@@ -107,7 +107,7 @@
             this.tag_search_tab_page.Location = new System.Drawing.Point(4, 22);
             this.tag_search_tab_page.Name = "tag_search_tab_page";
             this.tag_search_tab_page.Padding = new System.Windows.Forms.Padding(3);
-            this.tag_search_tab_page.Size = new System.Drawing.Size(708, 638);
+            this.tag_search_tab_page.Size = new System.Drawing.Size(849, 535);
             this.tag_search_tab_page.TabIndex = 2;
             this.tag_search_tab_page.Text = "Tag Search";
             this.tag_search_tab_page.UseVisualStyleBackColor = true;
@@ -127,6 +127,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -141,7 +142,7 @@
             this.gallery_tab_page.Location = new System.Drawing.Point(4, 22);
             this.gallery_tab_page.Name = "gallery_tab_page";
             this.gallery_tab_page.Padding = new System.Windows.Forms.Padding(3);
-            this.gallery_tab_page.Size = new System.Drawing.Size(708, 638);
+            this.gallery_tab_page.Size = new System.Drawing.Size(849, 535);
             this.gallery_tab_page.TabIndex = 3;
             this.gallery_tab_page.Text = "Local Gallery";
             this.gallery_tab_page.UseVisualStyleBackColor = true;
@@ -151,7 +152,7 @@
             this.local_flow_layout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.local_flow_layout.Location = new System.Drawing.Point(3, 3);
             this.local_flow_layout.Name = "local_flow_layout";
-            this.local_flow_layout.Size = new System.Drawing.Size(702, 632);
+            this.local_flow_layout.Size = new System.Drawing.Size(843, 529);
             this.local_flow_layout.TabIndex = 0;
             // 
             // Form1

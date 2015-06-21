@@ -217,7 +217,15 @@ namespace CSharpProjekt
                 + offset + "&limit=" + limit + "&access_token=" + accessToken);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader strRead = new StreamReader(response.GetResponseStream());
-            JsonDeviationList deviList = JsonConvert.DeserializeObject<JsonDeviationList>(strRead.ReadToEnd());
+            JsonDeviationList deviList = null;
+            try
+            {
+                deviList = JsonConvert.DeserializeObject<JsonDeviationList>(strRead.ReadToEnd());
+            }
+            catch (JsonSerializationException jse)
+            {
+                return null;
+            }
             foreach (JsonDeviation devi in deviList.results)
             {
                 if (devi.content != null)

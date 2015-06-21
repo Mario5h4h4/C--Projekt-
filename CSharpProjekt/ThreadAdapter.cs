@@ -57,6 +57,7 @@ namespace CSharpProjekt
             //WebException might happen in getHotImages
             try
             {
+                //maybe use AddAll instead?
                 conWrap.imageList = DAInterface.Instance.getHotImages(conWrap.offset, conWrap.limit);
             }
             catch (System.Net.WebException we)
@@ -95,9 +96,10 @@ namespace CSharpProjekt
                     conWrap.imageList = null;
                     throw new TimeoutException();
                 }
-            //WebException might happen in getHotImages
+            //WebException might happen in getNewestImages
             try
             {
+                //maybe use AddAll instead? look at getHot
                 conWrap.imageList = DAInterface.Instance.getNewestImages(conWrap.offset, conWrap.limit);
             }
             catch (System.Net.WebException we)
@@ -127,7 +129,42 @@ namespace CSharpProjekt
 
         public void getSearch()
         {
+            //If authentication goes wrong, we probably have no connection, or our keys for the API are bad
+            if (!DAInterface.Instance.checkAuthentication())
+                if (!DAInterface.Instance.authenticate())
+                {
+                    conWrap.imageList = null;
+                    throw new TimeoutException();
+                }
+            //WebException might happen in getImagesByTag
+            try
+            {
+                //maybe use AddAll instead? look at getHot
+                conWrap.imageList = DAInterface.Instance.getImagesByTag(conWrap.queryTerm, conWrap.offset, conWrap.limit);
+            }
+            catch (System.Net.WebException we)
+            {
+                // System.Windows.Forms.MessageBox.Show("Error: " + we.Message);
+                Console.Error.WriteLine(we.StackTrace);
+            }
 
+            //We download the small image files (thumbnails) here.
+            for (int i = conWrap.offset; i < conWrap.offset + conWrap.imageList.Count; i++)
+            {
+                DAImage dai = conWrap.imageList.ToArray()[i];
+                try
+                {
+                    string path = DAInterface.Instance.downloadThumbnail(dai);
+                    conWrap.filepaths.Add(path);
+                    //rather than sending an event when all images were downloaded, an event is fired
+                    //after each image, so user may see progress even with a slow connection
+                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, path));
+                }
+                catch (System.Net.WebException we)
+                {
+                    Console.Error.WriteLine(we.StackTrace);
+                }
+            }
         }
     }
 }
