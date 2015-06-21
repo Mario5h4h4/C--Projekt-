@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CSharpProjekt
 
 {
-    public delegate void DownloadFinishedHandler(object sender, DownloadFinishedEventArgs e);
+    delegate void DownloadFinishedHandler(object sender, DownloadFinishedEventArgs e);
 
     /// <summary>
     /// For threads, we need a void foo(void); function.
@@ -75,7 +75,7 @@ namespace CSharpProjekt
                     conWrap.filepaths.Add(path);
                     //rather than sending an event when all images were downloaded, an event is fired
                     //after each image, so user may see progress even with a slow connection
-                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, path));
+                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, dai));
                 }
                 catch (System.Net.WebException we)
                 {
@@ -118,7 +118,7 @@ namespace CSharpProjekt
                     conWrap.filepaths.Add(path);
                     //rather than sending an event when all images were downloaded, an event is fired
                     //after each image, so user may see progress even with a slow connection
-                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, path));
+                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, dai));
                 }
                 catch (System.Net.WebException we)
                 {
@@ -142,7 +142,7 @@ namespace CSharpProjekt
                 //maybe use AddAll instead? look at getHot
                 conWrap.imageList = DAInterface.Instance.getImagesByTag(conWrap.queryTerm, conWrap.offset, conWrap.limit);
             }
-            catch (Newtonsoft.Json.JsonSerializationException jse)
+            catch (Newtonsoft.Json.JsonSerializationException)
             {
                 System.Windows.Forms.MessageBox.Show("No images were found");
                 return;
@@ -163,7 +163,7 @@ namespace CSharpProjekt
                     conWrap.filepaths.Add(path);
                     //rather than sending an event when all images were downloaded, an event is fired
                     //after each image, so user may see progress even with a slow connection
-                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, path));
+                    onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, dai));
                 }
                 catch (System.Net.WebException we)
                 {

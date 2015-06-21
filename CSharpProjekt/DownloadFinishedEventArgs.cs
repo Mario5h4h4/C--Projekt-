@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CSharpProjekt
 {
-    public class DownloadFinishedEventArgs : EventArgs
+    class DownloadFinishedEventArgs : EventArgs
     {
         public int picBoxIndex { get; set; }
-        public string path { get; set; }
+        public DAImage dai { get; set; }
 
-        public DownloadFinishedEventArgs(int i, string p)
+        public DownloadFinishedEventArgs(int i, DAImage d)
         {
             this.picBoxIndex = i;
-            this.path = p;
+            this.dai = d;
         }
     }
 }

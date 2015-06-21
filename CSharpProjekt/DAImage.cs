@@ -20,6 +20,8 @@ namespace CSharpProjekt
         public int height;
         public int width;
         public string thumbnail_url;
+        public string thumbnail_path;
+        public string image_path;
 
         public DAImage(
             string _d_ID,
@@ -41,6 +43,8 @@ namespace CSharpProjekt
             height = content.height;
             width = content.width;
             thumbnail_url = _thumbnail_url;
+            thumbnail_path = "./thumbnails/thumb_" + d_ID + filetype;
+            image_path = "./images/" + d_ID + filetype;
         }
     }
 }

@@ -14,7 +14,8 @@ namespace CSharpProjekt
 {
     public partial class Form1 : Form
     {
-        private PictureBox[][] picBoxes = new PictureBox[3][];
+        private ContextMenu dropDownMenu = new ContextMenu();
+        private DAPictureBox[][] picBoxes = new DAPictureBox[3][];
         private const int elemCount = 18;
         private ContentWrapper[] ConWraps = new ContentWrapper[3];
         private ThreadAdapter[] thrAdapter = new ThreadAdapter[3];
@@ -33,12 +34,12 @@ namespace CSharpProjekt
             LayoutMap[2] = this.search_flow_layout;
             for (int i = 0; i < 3; i++)
             {
-                picBoxes[i] = new PictureBox[elemCount];
+                picBoxes[i] = new DAPictureBox[elemCount];
                 ConWraps[i] = new ContentWrapper(offsets[i], elemCount);
                 thrAdapter[i] = new ThreadAdapter(ConWraps[i]);
                 for (int j = 0; j < elemCount; j++)
                 {
-                    picBoxes[i][j] = new PictureBox();
+                    picBoxes[i][j] = new DAPictureBox();
                     picBoxes[i][j].Size = new Size((LayoutMap[i].Width / 6) - 8, (LayoutMap[i].Height / 3) - 8);
                     LayoutMap[i].Controls.Add(picBoxes[i][j]);
                 }
@@ -49,6 +50,11 @@ namespace CSharpProjekt
             thrStarts[2] = new ThreadStart(thrAdapter[2].getSearch);
 
             textBox1.KeyPress += textBox1_KeyPress;
+
+            dropDownMenu.MenuItems.Add("view Full-sized Image");
+            dropDownMenu.MenuItems.Add("test2");
+            picBoxes[1][0].ContextMenu = dropDownMenu;
+            picBoxes[1][1].ContextMenu = dropDownMenu;
         }
 
         void textBox1_KeyPress(object sender, KeyPressEventArgs e)

@@ -105,7 +105,6 @@ namespace CSharpProjekt
         //C:%HOMEPATH%\AppData\Local\da_app
         //webclient.DownloadFile doesnt resolve the directory to an absolute one
         //->using relative directory for now
-        private string tempdir = @"C:%HOMEPATH%\Downloads\";
 
         /// <summary>
         /// download the image located at dai.img_url
@@ -113,12 +112,16 @@ namespace CSharpProjekt
         /// <param name="dai">DAImage class containing core information about a deviation</param>
         public string downloadImage(DAImage dai)
         {
-            string filedir = dai.d_ID + dai.filetype;
-            while (webclient.IsBusy)
+            string filedir = dai.image_path;
+            lock (o)
             {
-                Thread.Sleep(20);
+                while (webclient.IsBusy)
+                {
+                    Monitor.Wait(o);
+                }
+                webclient.DownloadFileAsync(new Uri(dai.img_url), filedir);
+                Monitor.Pulse(o);
             }
-            webclient.DownloadFileAsync(new Uri(dai.img_url), filedir);
             return filedir;
         }
 
@@ -128,7 +131,7 @@ namespace CSharpProjekt
         /// <param name="dai">DAImage class containing core information about a deviation</param>
         public string downloadThumbnail(DAImage dai)
         {
-            string filedir = "thumb_" + dai.d_ID + dai.filetype;
+            string filedir = dai.thumbnail_path;
             lock (o)
             {
                 while (webclient.IsBusy)
