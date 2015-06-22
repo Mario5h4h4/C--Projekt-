@@ -257,5 +257,18 @@ namespace CSharpProjekt
             //TODO: error/exception handling.
             //Done at function call
         }
+
+        public void serializeImgInfo(DAImage dai)
+        {
+            string tmp = JsonConvert.SerializeObject(dai);
+            File.WriteAllText("./metadata/" + dai.d_ID + ".json", tmp);
+        }
+
+        public DAImage deserializeImgInfo(string dID)
+        {
+            string tmp = File.ReadAllText("./metadata/" + dID + ".json");
+            DAImage dai = JsonConvert.DeserializeObject<DAImage>(tmp);
+            return dai;
+        } 
     }
 }

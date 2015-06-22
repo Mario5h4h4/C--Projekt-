@@ -14,9 +14,20 @@ namespace CSharpProjekt
 {
     public partial class Form1 : Form
     {
+        //used for showing the big version of the Image
         private ImageForm imgForm = null;
         private DAImage curBigImage = null;
 
+        //used for the gallery (loc stand for local)
+        private DAPictureBox[] locPicBoxes = new DAPictureBox[elemCount];
+        private int locOffset = 0;
+        private ContentWrapper locConWrap;
+        private ThreadStart locThrStart;
+        private ThreadAdapter locThrAdapter;
+        private ContextMenu locDropDown = new ContextMenu();
+        private PictureBoxFiller locPBFiller;
+
+        //used for the tabs Hot, Newest, Search
         private ContextMenu dropDownMenu = new ContextMenu();
         private DAPictureBox[][] picBoxes = new DAPictureBox[3][];
         private const int elemCount = 18;
@@ -58,8 +69,22 @@ namespace CSharpProjekt
             thrStarts[1] = new ThreadStart(thrAdapter[1].getNew);
             thrStarts[2] = new ThreadStart(thrAdapter[2].getSearch);
 
+            //Allows the search to start by pressing ENTER
             textBox1.KeyPress += textBox1_KeyPress;
 
+            //gallery inits here
+            locConWrap = new ContentWrapper(locOffset, elemCount);
+            locDropDown.MenuItems.Add(new MenuItem("view full-sized Image"));
+            locThrAdapter = new ThreadAdapter(locConWrap);
+            locPBFiller = new PictureBoxFiller(locThrAdapter, locPicBoxes);
+            locThrStart = new ThreadStart(locThrAdapter.getLocal);
+            for (int i = 0; i < elemCount; i++)
+            {
+                locPicBoxes[i] = new DAPictureBox();
+                locPicBoxes[i].Size = new Size((this.local_flow_layout.Width / 6) - 8, (this.local_flow_layout.Height / 3) - 8);
+                locPicBoxes[i].ContextMenu = locDropDown;
+                this.local_flow_layout.Controls.Add(locPicBoxes[i]);
+            }
         }
 
         void textBox1_KeyPress(object sender, KeyPressEventArgs e)
