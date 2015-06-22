@@ -108,6 +108,7 @@ namespace CSharpProjekt
 
         /// <summary>
         /// download the image located at dai.img_url
+        /// Used to save the image for the localGallery
         /// </summary>
         /// <param name="dai">DAImage class containing core information about a deviation</param>
         public string downloadImage(DAImage dai)
@@ -120,6 +121,27 @@ namespace CSharpProjekt
                     Monitor.Wait(o);
                 }
                 webclient.DownloadFileAsync(new Uri(dai.img_url), filedir);
+                Monitor.Pulse(o);
+            }
+            return filedir;
+        }
+
+        /// <summary>
+        /// downloads the Image to "./imgTemp/", so we can use it to view it FullScreen
+        /// files there should be temporary
+        /// </summary>
+        /// <param name="dai"></param>
+        /// <returns></returns>
+        public string downloadImageTemp(DAImage dai)
+        {
+            string filedir = "./imgTemp/" + dai.d_ID + dai.filetype;
+            lock (o)
+            {
+                while (webclient.IsBusy)
+                {
+                    Monitor.Wait(o);
+                }
+                webclient.DownloadFile(new Uri(dai.img_url), filedir);
                 Monitor.Pulse(o);
             }
             return filedir;

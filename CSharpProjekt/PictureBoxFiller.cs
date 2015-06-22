@@ -31,6 +31,7 @@ namespace CSharpProjekt
 
         private void DownloadFinished(object sender, DownloadFinishedEventArgs e)
         {
+            PBs[e.picBoxIndex].dai = e.dai;
             PBs[e.picBoxIndex].LoadAsync(e.dai.thumbnail_path);
 
             //the code below was used to test the DataBaseInterface

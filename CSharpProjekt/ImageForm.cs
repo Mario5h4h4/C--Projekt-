@@ -12,11 +12,35 @@ namespace CSharpProjekt
 {
     public partial class ImageForm : Form
     {
-        private Form parent;
-        public ImageForm(Form parent)
+        private Form1 parent;
+        public DAImage dai = null;
+        public bool PicIsLocal = false;
+        internal ImageForm(Form1 parent, DAImage dai)
         {
             this.parent = parent;
+            this.dai = dai;
             InitializeComponent();
         }
+
+        private void ImageForm_Load(object sender, EventArgs e)
+        {
+            this.reload_pictureBox();
+        }
+
+        internal void reload_pictureBox()
+        {
+            if (!PicIsLocal)
+            {
+                DAInterface.Instance.downloadImageTemp(dai);
+                this.pictureBox1.Size = new Size(dai.width, dai.height);
+                this.pictureBox1.LoadAsync("./imgTemp/" + dai.d_ID + dai.filetype);
+            }
+            else
+            {
+                this.pictureBox1.Size = new Size(dai.width, dai.height);
+                this.pictureBox1.LoadAsync(dai.image_path);
+            }
+        }
+
     }
 }

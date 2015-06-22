@@ -7,12 +7,20 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        delegate void disposeCallback();
+
+        private void disposeChild()
+        {
+            parent.disposeChild();
+        }
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            parent.Invoke(new disposeCallback(disposeChild));
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -44,11 +52,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ImageForm";
             this.Text = "ImageForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ImageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

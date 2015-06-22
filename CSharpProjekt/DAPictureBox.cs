@@ -9,6 +9,6 @@ namespace CSharpProjekt
 {
     class DAPictureBox : PictureBox 
     {
-        public DAImage dai { get; set; }
+        internal DAImage dai { get; set; }
     }
 }

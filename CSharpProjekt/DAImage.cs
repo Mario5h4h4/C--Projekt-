@@ -6,7 +6,7 @@ using System.Text;
 namespace CSharpProjekt
 {
     //core information about a picture
-    class DAImage
+    public class DAImage
     {
         //deviation ID
         public string d_ID;

@@ -15,6 +15,8 @@ namespace CSharpProjekt
     public partial class Form1 : Form
     {
         private ImageForm imgForm = null;
+        private DAImage curBigImage = null;
+
         private ContextMenu dropDownMenu = new ContextMenu();
         private DAPictureBox[][] picBoxes = new DAPictureBox[3][];
         private const int elemCount = 18;
@@ -33,6 +35,11 @@ namespace CSharpProjekt
             LayoutMap[0] = this.hot_flow_layout;
             LayoutMap[1] = this.newest_flow_layout;
             LayoutMap[2] = this.search_flow_layout;
+
+            dropDownMenu.MenuItems.Add("view Full-sized Image");
+            dropDownMenu.MenuItems.Add("test2");
+            dropDownMenu.MenuItems[0].Click += new EventHandler(clickViewImage);
+
             for (int i = 0; i < 3; i++)
             {
                 picBoxes[i] = new DAPictureBox[elemCount];
@@ -42,6 +49,7 @@ namespace CSharpProjekt
                 {
                     picBoxes[i][j] = new DAPictureBox();
                     picBoxes[i][j].Size = new Size((LayoutMap[i].Width / 6) - 8, (LayoutMap[i].Height / 3) - 8);
+                    picBoxes[i][j].ContextMenu = dropDownMenu;
                     LayoutMap[i].Controls.Add(picBoxes[i][j]);
                 }
                     picBoxFiller[i] = new PictureBoxFiller(thrAdapter[i], picBoxes[i]);
@@ -52,10 +60,6 @@ namespace CSharpProjekt
 
             textBox1.KeyPress += textBox1_KeyPress;
 
-            dropDownMenu.MenuItems.Add("view Full-sized Image");
-            dropDownMenu.MenuItems.Add("test2");
-            picBoxes[1][0].ContextMenu = dropDownMenu;
-            picBoxes[1][1].ContextMenu = dropDownMenu;
         }
 
         void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -132,14 +136,46 @@ namespace CSharpProjekt
                 .ToArray());
         }
 
+        private void clickViewImage(object sender, EventArgs e)
+        {
+            DAPictureBox dapb = ((MenuItem)sender).Parent.GetContextMenu().SourceControl as DAPictureBox;
+            curBigImage = dapb.dai;
+            if (imgForm == null)
+            {
+                imgForm = new ImageForm(this, curBigImage);
+                DAInterface.Instance.downloadImageTemp(curBigImage);
+                new Thread(new ThreadStart(loadImageForm)).Start();
+            }
+            else
+            {
+                //To do this, we'll need to use ImageForm.Invoke
+                //imgForm.dai = curBigImage;
+                setBigImageCallback setimg = new setBigImageCallback(setBigImage);
+                imgForm.Invoke(setimg);
+            }
+        }
+
+        delegate void setBigImageCallback();
+
+        private void setBigImage()
+        {
+            imgForm.dai = curBigImage;
+            imgForm.reload_pictureBox();
+        }
+
+        internal void disposeChild()
+        {
+            imgForm = null;
+        }
+
         //tested if we could create a new Form from within this one.
         //succeeded with new Thread
-        
+        /*
         private void Form1_Load(object sender, EventArgs e)
         {
             new Thread(new ThreadStart(loadImageForm)).Start();
         }
-        
+        */
         //experiments with invoke
         /*private delegate void foo();
         private delegate void oof(Form f);
@@ -149,10 +185,8 @@ namespace CSharpProjekt
         }*/
         private void loadImageForm()
         {
-            ImageForm imgform = new ImageForm(this);
             //this.AddOwnedForm(imgform);
-            Application.Run(imgform);
-            Application.Exit(new CancelEventArgs());
+            Application.Run(imgForm);
             //foo f = new foo(this.OwnedForms[0].Activate);
             //oof o = new oof(this.setVisible);
             //imgform.Invoke(f);

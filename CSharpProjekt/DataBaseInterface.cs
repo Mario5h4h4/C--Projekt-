@@ -31,6 +31,8 @@ namespace CSharpProjekt
                 Directory.CreateDirectory("./thumbnails");
             if (!Directory.Exists("./images"))
                 Directory.CreateDirectory("./images");
+            if (!Directory.Exists("./imgTemp"))
+                Directory.CreateDirectory("./imgTemp");
             dsImages = new DataSet("images.db");
             mTable = new DataTable("images");
             dsImages.Tables.Add(mTable);

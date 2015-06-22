@@ -7,6 +7,12 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        delegate void onClose();
+
+        private void onFormClose()
+        {
+            imgForm.Dispose();
+        }
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -14,6 +20,10 @@
         protected override void Dispose(bool disposing)
         {
             DataBaseInterface.Instance.commit();
+            if (imgForm != null)
+            {
+                imgForm.Invoke(new onClose(onFormClose));
+            }
             if (disposing && (components != null))
             {
                 components.Dispose();
