@@ -14,6 +14,7 @@ namespace CSharpProjekt
 {
     public partial class Form1 : Form
     {
+        private ImageForm imgForm = null;
         private ContextMenu dropDownMenu = new ContextMenu();
         private DAPictureBox[][] picBoxes = new DAPictureBox[3][];
         private const int elemCount = 18;
@@ -133,12 +134,12 @@ namespace CSharpProjekt
 
         //tested if we could create a new Form from within this one.
         //succeeded with new Thread
-        /*
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             new Thread(new ThreadStart(loadImageForm)).Start();
         }
-        */
+        
         //experiments with invoke
         /*private delegate void foo();
         private delegate void oof(Form f);
@@ -151,6 +152,7 @@ namespace CSharpProjekt
             ImageForm imgform = new ImageForm(this);
             //this.AddOwnedForm(imgform);
             Application.Run(imgform);
+            Application.Exit(new CancelEventArgs());
             //foo f = new foo(this.OwnedForms[0].Activate);
             //oof o = new oof(this.setVisible);
             //imgform.Invoke(f);

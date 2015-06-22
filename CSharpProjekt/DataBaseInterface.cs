@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -23,8 +24,7 @@ namespace CSharpProjekt
         }
         private DataSet dsImages;
         private DataTable mTable;
-        private readonly object o = new object();
-        private bool writing = false;
+        private ReaderWriterLockSlim readWriteLock;
         private DataBaseInterface()
         {
             if (!Directory.Exists("./thumbnails"))
@@ -44,11 +44,43 @@ namespace CSharpProjekt
             {
                 dsImages.ReadXml(new FileStream("./images.db", FileMode.Open));
             }
+            readWriteLock = new ReaderWriterLockSlim();
         }
 
         public static void init()
         {
             instance = new DataBaseInterface();
+        }
+
+        public void AddRow(string dID, string thumb, string img)
+        {
+            readWriteLock.EnterWriteLock();
+            DataRow tmp = mTable.NewRow();
+            tmp["deviation_id"] = dID;
+            tmp["thumbnail"] = thumb;
+            tmp["image"] = img;
+            mTable.Rows.Add(tmp);
+            readWriteLock.ExitWriteLock();
+        }
+
+        public string getThumbnail(string dID) {
+            readWriteLock.EnterReadLock();
+            string ret = (string) mTable.Rows.Find(dID)["thumbnail"];
+            readWriteLock.ExitReadLock();
+            return ret;
+        }
+
+        public string getImage(string dID)
+        {
+            readWriteLock.EnterReadLock();
+            string ret = (string)mTable.Rows.Find(dID)["image"];
+            readWriteLock.ExitReadLock();
+            return ret;
+        }
+
+        public void commit()
+        {
+            dsImages.WriteXml(new FileStream("./images.db", FileMode.Create));
         }
     }
 }

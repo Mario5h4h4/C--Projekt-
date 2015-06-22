@@ -32,6 +32,9 @@ namespace CSharpProjekt
         private void DownloadFinished(object sender, DownloadFinishedEventArgs e)
         {
             PBs[e.picBoxIndex].LoadAsync(e.dai.thumbnail_path);
+
+            //the code below was used to test the DataBaseInterface
+            //DataBaseInterface.Instance.AddRow(e.dai.d_ID, e.dai.thumbnail_path, e.dai.image_path);
         }
     }
 }
