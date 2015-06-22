@@ -178,6 +178,7 @@ namespace CSharpProjekt
             for (int i = conWrap.offset; i < IDs.Count && i < conWrap.offset + conWrap.limit; i++)
             {
                 DAImage dai = DAInterface.Instance.deserializeImgInfo(IDs[i]);
+                conWrap.imageList = new List<DAImage>();
                 conWrap.imageList.Add(dai);
                 conWrap.filepaths.Add(dai.thumbnail_path);
                 onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, dai));

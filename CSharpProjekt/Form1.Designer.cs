@@ -20,10 +20,12 @@
         protected override void Dispose(bool disposing)
         {
             DataBaseInterface.Instance.commit();
-            if (imgForm != null)
+            //decided to not use this, if we try to close the imgForm we get some kind of an infinite loop
+            //probably because imgForm.Dispose calls Form1 to set the variable to null.
+            /*if (imgForm != null)
             {
                 imgForm.Invoke(new onClose(onFormClose));
-            }
+            }*/
             if (disposing && (components != null))
             {
                 components.Dispose();

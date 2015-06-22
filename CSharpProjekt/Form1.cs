@@ -20,6 +20,7 @@ namespace CSharpProjekt
 
         //used for the gallery (loc stand for local)
         private DAPictureBox[] locPicBoxes = new DAPictureBox[elemCount];
+        //we dont have a "next" or "prev" button, so it isnt actually needed
         private int locOffset = 0;
         private ContentWrapper locConWrap;
         private ThreadStart locThrStart;
@@ -30,16 +31,25 @@ namespace CSharpProjekt
         //used for the tabs Hot, Newest, Search
         private ContextMenu dropDownMenu = new ContextMenu();
         private DAPictureBox[][] picBoxes = new DAPictureBox[3][];
+        //the amount of deviations shown at once is limited to 18: 3 rows with 6 items
         private const int elemCount = 18;
         private ContentWrapper[] ConWraps = new ContentWrapper[3];
+        //all functions that needed to be adapted for use in Threads are in the ThreadAdapter class
+        //multiple objects so the methods may be run with individual ContentWrapper
         private ThreadAdapter[] thrAdapter = new ThreadAdapter[3];
+        //fills the PictureBoxes given to it with the results of the ThreadAdapter given to it, after the event
+        //DownloadFinished is called
         private PictureBoxFiller[] picBoxFiller = new PictureBoxFiller[3];
         private ThreadStart[] thrStarts = new ThreadStart[3];
+        //no buttons to change pages, so the offsets arent actually needed for now
         private int[] offsets = { 0, 0, 0 };
+        //used only for initialization
         private Dictionary<int, FlowLayoutPanel> LayoutMap = new Dictionary<int, FlowLayoutPanel>();
         public Form1()
         {
             InitializeComponent();
+
+            //manually added the EventHandler for SelectedIndexChanged
             this.tabbed_views.SelectedIndexChanged += new System.EventHandler(this.tabbed_views_SelectedIndexChanged);
 
             //Initializing all of the Arrays above here
@@ -48,8 +58,9 @@ namespace CSharpProjekt
             LayoutMap[2] = this.search_flow_layout;
 
             dropDownMenu.MenuItems.Add("view Full-sized Image");
-            dropDownMenu.MenuItems.Add("test2");
+            dropDownMenu.MenuItems.Add("save Image");
             dropDownMenu.MenuItems[0].Click += new EventHandler(clickViewImage);
+            dropDownMenu.MenuItems[1].Click += new EventHandler(clickSaveImage);
 
             for (int i = 0; i < 3; i++)
             {
@@ -75,6 +86,7 @@ namespace CSharpProjekt
             //gallery inits here
             locConWrap = new ContentWrapper(locOffset, elemCount);
             locDropDown.MenuItems.Add(new MenuItem("view full-sized Image"));
+            locDropDown.MenuItems[0].Click += this.clickViewImage;
             locThrAdapter = new ThreadAdapter(locConWrap);
             locPBFiller = new PictureBoxFiller(locThrAdapter, locPicBoxes);
             locThrStart = new ThreadStart(locThrAdapter.getLocal);
@@ -87,15 +99,12 @@ namespace CSharpProjekt
             }
         }
 
+        //checks if ENTER was pressed, if yes call button1_Click
+        //In short, if a user types Enter after writing the query term, the search is started
         void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
                 this.button1_Click(sender, EventArgs.Empty);
-        }
-
-        private void hot_flow_layout_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         /// <summary>
@@ -112,38 +121,11 @@ namespace CSharpProjekt
                 t.Start();
             }
 
-            /*
-            //currently thinking about making an ThreadAdapter Array instead of making a new Object
-            //at every call. Should be possible thanks to using ContentWrapper and the behavior of references.
-            //Also applicable for pbHot, PictureBoxFiller and even ThreadStart.
-            switch (tabbed_views.SelectedIndex)
+            if (tabbed_views.SelectedIndex == 3)
             {
-                case 0:
-                    ThreadAdapter ta = new ThreadAdapter(ConWraps[tabbed_views.SelectedIndex]);
-                    PictureBoxFiller pbf = new PictureBoxFiller(ta, pbHot);
-                    Thread t = new Thread(new ThreadStart(ta.getHot));
-                    try
-                    {
-                        t.Start();
-                    }
-                    catch (TimeoutException te)
-                    {
-                        MessageBox.Show("No connection could be etablished:\n" + te.Message);
-                    }
-                    catch (WebException we)
-                    {
-                        MessageBox.Show("An Error occured while downloading metadata:\n" + we.Message);
-                    }
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                default: 
-                    break;
-            }*/
+                Thread t = new Thread(locThrStart);
+                t.Start();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -178,6 +160,22 @@ namespace CSharpProjekt
                 setBigImageCallback setimg = new setBigImageCallback(setBigImage);
                 imgForm.Invoke(setimg);
             }
+        }
+
+        //Note: There are more different media types on deviant art, not only images and GIFs.
+        //If a bad image (e.g. text, flash animations...) is chosen to be downloaded,
+        //the programm gets stuck somewhere and isnt responsive anymore
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clickSaveImage(object sender, EventArgs e)
+        {
+            DAPictureBox dapb = ((MenuItem)sender).Parent.GetContextMenu().SourceControl as DAPictureBox;
+            DAInterface.Instance.downloadImage(dapb.dai);
+            DAInterface.Instance.serializeImgInfo(dapb.dai);
+            DataBaseInterface.Instance.AddRow(dapb.dai.d_ID, dapb.dai.thumbnail_path, dapb.dai.image_path, "./metadata/" + dapb.dai.d_ID + ".json");
         }
 
         delegate void setBigImageCallback();

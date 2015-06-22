@@ -23,6 +23,10 @@ namespace CSharpProjekt
         public string thumbnail_path;
         public string image_path;
 
+        public DAImage()
+        {
+
+        }
         public DAImage(
             string _d_ID,
             string _title,
