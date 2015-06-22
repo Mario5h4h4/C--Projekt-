@@ -127,6 +127,9 @@ namespace CSharpProjekt
             }
         }
 
+        /// <summary>
+        /// the wrapper function for DeviantArtInterface.getImagesByTag. Also downloads the Thumbnails.
+        /// </summary>
         public void getSearch()
         {
             //If authentication goes wrong, we probably have no connection, or our keys for the API are bad
@@ -139,7 +142,8 @@ namespace CSharpProjekt
             //WebException might happen in getImagesByTag
             try
             {
-                //maybe use AddAll instead? look at getHot
+                //If we were to extend the program so a user could view more deviations by pressing a "next" button,
+                //imageList.AddAll would be more appropriate
                 conWrap.imageList = DAInterface.Instance.getImagesByTag(conWrap.queryTerm, conWrap.offset, conWrap.limit);
             }
             catch (Newtonsoft.Json.JsonSerializationException)
@@ -172,6 +176,10 @@ namespace CSharpProjekt
             }
         }
 
+        /// <summary>
+        /// gets the ID of every available Deviation, and loads the first conWrap.limit DAImages into the program,
+        /// and continues to add the thumbnails to the picture boxes
+        /// </summary>
         public void getLocal()
         {
             List<string> IDs = DataBaseInterface.Instance.getAllIDs();

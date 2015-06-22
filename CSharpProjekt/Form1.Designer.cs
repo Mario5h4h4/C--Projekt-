@@ -91,7 +91,6 @@
             this.hot_flow_layout.Name = "hot_flow_layout";
             this.hot_flow_layout.Size = new System.Drawing.Size(843, 529);
             this.hot_flow_layout.TabIndex = 0;
-            this.hot_flow_layout.Paint += new System.Windows.Forms.PaintEventHandler(this.hot_flow_layout_Paint);
             // 
             // newest_tab_page
             // 

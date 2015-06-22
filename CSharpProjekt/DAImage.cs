@@ -23,6 +23,9 @@ namespace CSharpProjekt
         public string thumbnail_path;
         public string image_path;
 
+        //This constructor is needed to make serialization with the JsonConverter easier
+        //The JsonConverter calls the constructor of the object it is deserialising, and fills blank parametes with null
+        //this lead to an NullReferenceException because of JsonReceiver.Content.src
         public DAImage()
         {
 
@@ -39,6 +42,7 @@ namespace CSharpProjekt
             title = _title;
             category = _category;
             author = _author;
+            //this line caused the above mention NullReferenceException
             img_url = content.src;
             for (int i = img_url.LastIndexOf('.'); i < img_url.Length; i++)
             {

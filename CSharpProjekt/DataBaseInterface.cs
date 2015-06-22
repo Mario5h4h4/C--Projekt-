@@ -27,6 +27,7 @@ namespace CSharpProjekt
         private ReaderWriterLockSlim readWriteLock;
         private DataBaseInterface()
         {
+            //setting up directories needed for the program
             if (!Directory.Exists("./thumbnails"))
                 Directory.CreateDirectory("./thumbnails");
             if (!Directory.Exists("./images"))
@@ -35,6 +36,7 @@ namespace CSharpProjekt
                 Directory.CreateDirectory("./imgTemp");
             if (!Directory.Exists("./metadata"))
                 Directory.CreateDirectory("./metadata");
+            //setting up the DataSet images.db with the DataTable images
             dsImages = new DataSet("images.db");
             mTable = new DataTable("images");
             dsImages.Tables.Add(mTable);
@@ -43,6 +45,7 @@ namespace CSharpProjekt
             mTable.Columns.Add(new DataColumn("thumbnail"));
             mTable.Columns.Add(new DataColumn("image"));
             mTable.Columns.Add(new DataColumn("meta"));
+            //if an the images.db file exists, info is read out of it, otherwise an new one will be created
             if (!File.Exists("./images.db"))
                 dsImages.WriteXml(new FileStream("./images.db", FileMode.Create));
             else
@@ -52,11 +55,20 @@ namespace CSharpProjekt
             readWriteLock = new ReaderWriterLockSlim();
         }
 
+        //initializes the single object of this class
+        //called before Application.Run(Form1)
         public static void init()
         {
             instance = new DataBaseInterface();
         }
 
+        /// <summary>
+        /// Adds a Row to the DataTable "images"
+        /// </summary>
+        /// <param name="dID">column deviation_id</param>
+        /// <param name="thumb">column thumbnail</param>
+        /// <param name="img">column image</param>
+        /// <param name="md">column meta (metadata)</param>
         public void AddRow(string dID, string thumb, string img, string md)
         {
             readWriteLock.EnterWriteLock();
@@ -69,6 +81,7 @@ namespace CSharpProjekt
             readWriteLock.ExitWriteLock();
         }
 
+        //functions i thought would be useful, but werent used in the end
         public string getThumbnail(string dID) {
             readWriteLock.EnterReadLock();
             string ret = (string) mTable.Rows.Find(dID)["thumbnail"];
@@ -95,7 +108,7 @@ namespace CSharpProjekt
         /// <summary>
         /// returns the Row with the right deviation_id
         /// </summary>
-        /// <param name="dID"></param>
+        /// <param name="dID">deviation_id</param>
         /// <returns>follows the convention: {deviation_id, thumbnail, image, meta}</returns>
         public string[] getRow(string dID)
         {
@@ -109,6 +122,10 @@ namespace CSharpProjekt
             return ret;
         }
 
+        /// <summary>
+        /// Gets a List of Strings, each containing a deviation_id
+        /// </summary>
+        /// <returns>List of deviation IDs</returns>
         public List<string> getAllIDs()
         {
             readWriteLock.EnterReadLock();
@@ -120,6 +137,8 @@ namespace CSharpProjekt
             return tmplist;
         }
 
+        //saves the changes made to the database
+        //this method is called in Form1.Dispose
         public void commit()
         {
             dsImages.WriteXml(new FileStream("./images.db", FileMode.Create));
