@@ -21,7 +21,8 @@
         protected override void Dispose(bool disposing)
         {
             //sets imgForm = null in the parent
-            parent.Invoke(new disposeCallback(disposeChild));
+            if (parent != null)
+                parent.Invoke(new disposeCallback(disposeChild));
             if (disposing && (components != null))
             {
                 components.Dispose();

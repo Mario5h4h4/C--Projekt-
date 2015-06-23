@@ -43,5 +43,10 @@ namespace CSharpProjekt
                 this.pictureBox1.LoadAsync(dai.image_path);
             }
         }
+
+        internal void disposeParent()
+        {
+            parent = null;
+        }
     }
 }
