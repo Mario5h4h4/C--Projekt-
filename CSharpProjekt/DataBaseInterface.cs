@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
+using Windows.Notifications;
 
 namespace CSharpProjekt
 {
@@ -145,9 +146,22 @@ namespace CSharpProjekt
 
         //saves the changes made to the database
         //this method is called in Form1.Dispose
-        public void commit()
+        public void commit(int count = 0)
         {
-            dsImages.WriteXml(new FileStream("./images.db", FileMode.Create));
+            if (count >= 30)
+            {
+                
+                return;
+            }
+            try
+            {
+                dsImages.WriteXml(new FileStream("./images.db", FileMode.Create));
+            }
+            catch (System.IO.IOException)
+            {
+                Thread.Sleep(100);
+                this.commit(count +1);
+            }
         }
     }
 }

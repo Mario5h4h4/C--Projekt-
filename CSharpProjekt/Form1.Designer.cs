@@ -19,14 +19,14 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            //rewriting the xml file simulating our DataBase
-            DataBaseInterface.Instance.commit();
             //decided to not use this, if we try to close the imgForm we get some kind of an infinite loop
             //probably because imgForm.Dispose calls Form1 to set the variable to null.
             if (imgForm != null)
             {
                 imgForm.Invoke(new onClose(onFormClose));
             }
+            //rewriting the xml file simulating our DataBase
+            DataBaseInterface.Instance.commit();
             if (disposing && (components != null))
             {
                 components.Dispose();

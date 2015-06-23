@@ -47,6 +47,7 @@ namespace CSharpProjekt
         internal void disposeParent()
         {
             parent = null;
+            this.Dispose(true);
         }
     }
 }
