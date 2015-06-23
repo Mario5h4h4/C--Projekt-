@@ -40,6 +40,7 @@ namespace CSharpProjekt
             dsImages = new DataSet("images.db");
             mTable = new DataTable("images");
             dsImages.Tables.Add(mTable);
+            //Add the columns "deviation_id", "thumbnail", "image", "meta"
             mTable.Columns.Add(new DataColumn("deviation_id"));
             mTable.Constraints.Add("primary key", dsImages.Tables[0].Columns[0], true);
             mTable.Columns.Add(new DataColumn("thumbnail"));

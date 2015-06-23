@@ -42,7 +42,7 @@ namespace CSharpProjekt
             title = _title;
             category = _category;
             author = _author;
-            //this line caused the above mention NullReferenceException
+            //this line caused the above mentioned NullReferenceException
             img_url = content.src;
             for (int i = img_url.LastIndexOf('.'); i < img_url.Length; i++)
             {

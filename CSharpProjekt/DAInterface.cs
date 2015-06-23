@@ -14,7 +14,7 @@ namespace CSharpProjekt
     //Class used for communication with DeviantArt as well as for downloading the images.
     sealed class DAInterface
     {
-        //We are doing all communications with this class, on other words it may become quite big.
+        //We are doing all communications with this class, in other words it may become quite big.
         //In short, we only want one instance of it to not waste ressources
 
         private static DAInterface instance;
@@ -44,6 +44,7 @@ namespace CSharpProjekt
         private string clientID = "2709";
         private string clientSecret = "620053b188693f93ba78a51093da65d5";
 
+        //only used for Thread-Safety
         private readonly object o = new object();
 
         /// <summary>

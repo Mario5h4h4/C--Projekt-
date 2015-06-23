@@ -29,6 +29,11 @@ namespace CSharpProjekt
             this.ta.downLoadFinished += this.DownloadFinished;
         }
 
+        /// <summary>
+        /// If the Download is finished (or the local metadata is deserialized) load the image into the PictureBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">DownloadFinishedEventArgs with DAImage and Index</param>
         private void DownloadFinished(object sender, DownloadFinishedEventArgs e)
         {
             PBs[e.picBoxIndex].dai = e.dai;

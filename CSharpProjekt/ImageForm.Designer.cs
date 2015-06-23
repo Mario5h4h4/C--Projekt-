@@ -20,6 +20,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            //sets imgForm = null in the parent
             parent.Invoke(new disposeCallback(disposeChild));
             if (disposing && (components != null))
             {
