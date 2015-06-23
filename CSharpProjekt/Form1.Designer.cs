@@ -175,6 +175,7 @@
             this.Controls.Add(this.tabbed_views);
             this.Name = "Form1";
             this.Text = "Deviantart Browser";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabbed_views.ResumeLayout(false);
             this.hot_tab_page.ResumeLayout(false);
             this.newest_tab_page.ResumeLayout(false);

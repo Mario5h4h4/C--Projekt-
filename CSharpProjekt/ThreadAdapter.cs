@@ -93,8 +93,9 @@ namespace CSharpProjekt
             if (!DAInterface.Instance.checkAuthentication())
                 if (!DAInterface.Instance.authenticate())
                 {
-                    conWrap.imageList = null;
-                    throw new TimeoutException();
+                    conWrap.imageList = new List<DAImage>();
+                    //throw new TimeoutException();
+                    System.Windows.Forms.MessageBox.Show("No Connection available");
                 }
             //WebException might happen in getNewestImages
             try

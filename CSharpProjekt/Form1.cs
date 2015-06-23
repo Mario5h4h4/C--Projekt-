@@ -216,5 +216,20 @@ namespace CSharpProjekt
             //imgform.Invoke(o, new object[] { imgform });
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Trying to authenticate");
+            if (!DAInterface.Instance.authenticate())
+            {
+                MessageBox.Show("Authentication failed.\nLoading local library now");
+                tabbed_views.SelectedIndex = 3;
+            }
+            else
+            {
+                tabbed_views.SelectedIndex = 0;
+                this.tabbed_views_SelectedIndexChanged(sender, e);
+            }
+        }
+
     }
 }
