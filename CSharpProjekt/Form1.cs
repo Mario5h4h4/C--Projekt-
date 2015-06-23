@@ -17,6 +17,7 @@ namespace CSharpProjekt
         //used for showing the big version of the Image
         private ImageForm imgForm = null;
         private DAImage curBigImage = null;
+        private bool imgIsLocal = false;
 
         //used for the gallery (loc stand for local)
         private DAPictureBox[] locPicBoxes = new DAPictureBox[elemCount];
@@ -52,11 +53,12 @@ namespace CSharpProjekt
             //manually added the EventHandler for SelectedIndexChanged
             this.tabbed_views.SelectedIndexChanged += new System.EventHandler(this.tabbed_views_SelectedIndexChanged);
 
-            //Initializing all of the Arrays above here
+            //Initializing of all of the Arrays above here
             LayoutMap[0] = this.hot_flow_layout;
             LayoutMap[1] = this.newest_flow_layout;
             LayoutMap[2] = this.search_flow_layout;
 
+            //OnRightCLick DropDownMenu
             dropDownMenu.MenuItems.Add("view Full-sized Image");
             dropDownMenu.MenuItems.Add("save Image");
             dropDownMenu.MenuItems[0].Click += new EventHandler(clickViewImage);
@@ -67,6 +69,7 @@ namespace CSharpProjekt
                 picBoxes[i] = new DAPictureBox[elemCount];
                 ConWraps[i] = new ContentWrapper(offsets[i], elemCount);
                 thrAdapter[i] = new ThreadAdapter(ConWraps[i]);
+                //picBox initialization, settings and adding it to the right layout
                 for (int j = 0; j < elemCount; j++)
                 {
                     picBoxes[i][j] = new DAPictureBox();
@@ -121,6 +124,7 @@ namespace CSharpProjekt
                 t.Start();
             }
 
+            //local gallery
             if (tabbed_views.SelectedIndex == 3)
             {
                 Thread t = new Thread(locThrStart);
@@ -128,6 +132,11 @@ namespace CSharpProjekt
             }
         }
 
+        /// <summary>
+        /// starts the search with the query written into textBox1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             ConWraps[2].queryTerm = this.removeWhitespace(textBox1.Text);
@@ -137,26 +146,53 @@ namespace CSharpProjekt
 
         //simply removes all Whitespace. Needed for getImagesByTag:
         //Tags do not contain Whitespace Characters
+        /// <summary>
+        /// removes WhiteSpace Characters from string input
+        /// </summary>
+        /// <param name="input">the input to be freed of Whitespace Characters</param>
+        /// <returns>new string without WhiteSpaces</returns>
         private string removeWhitespace(string input)
         {
             return new string(input.Where(c => !Char.IsWhiteSpace(c))
                 .ToArray());
         }
 
+        /// <summary>
+        /// If the MenuItem "view full-sized image" is clicked, either the new image is set in an existing ImageForm, or a new ImageForm is made
+        /// </summary>
+        /// <param name="sender">The MenuItem clicked on. With this, we can get the DAPictureBox on which the dropDownMenu was made</param>
+        /// <param name="e">EventArgs</param>
         private void clickViewImage(object sender, EventArgs e)
         {
+            //Getting the right DAPictureBox from the sender object
             DAPictureBox dapb = ((MenuItem)sender).Parent.GetContextMenu().SourceControl as DAPictureBox;
+            //setting the Image-Info
             curBigImage = dapb.dai;
+            //if the parent of dapb is the layout for the local gallery, we set imgIsLocal to true, which will be given to
+            //imgForm later on. This ensures imgForm wont try to download a picture if there is no connection
+            if (dapb.Parent.Equals(this.local_flow_layout))
+            {
+                imgIsLocal = true;
+            }
+            else
+            {
+                imgIsLocal = false;
+                //download the full-sized Image (is done in imageForm.load)
+                //DAInterface.Instance.downloadImageTemp(curBigImage);
+            }
             if (imgForm == null)
             {
+                //imgForm doesnt exit -> make a new one with ImageInfo
                 imgForm = new ImageForm(this, curBigImage);
-                DAInterface.Instance.downloadImageTemp(curBigImage);
+                imgForm.PicIsLocal = imgIsLocal;
+                //run the new Form
                 new Thread(new ThreadStart(loadImageForm)).Start();
             }
             else
             {
                 //To do this, we'll need to use ImageForm.Invoke
                 //imgForm.dai = curBigImage;
+                //sets the Image Info in the existing ImageForm
                 setBigImageCallback setimg = new setBigImageCallback(setBigImage);
                 imgForm.Invoke(setimg);
             }
@@ -166,26 +202,35 @@ namespace CSharpProjekt
         //If a bad image (e.g. text, flash animations...) is chosen to be downloaded,
         //the programm gets stuck somewhere and isnt responsive anymore
         /// <summary>
-        /// 
+        /// saves the image the DropDownMenu was called on
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void clickSaveImage(object sender, EventArgs e)
         {
+            //Get the right pictureBox from the sender object
             DAPictureBox dapb = ((MenuItem)sender).Parent.GetContextMenu().SourceControl as DAPictureBox;
+            //download the image to "./images/"
             DAInterface.Instance.downloadImage(dapb.dai);
+            //serialize (save) the the metadata of the Image to "./metadata"
             DAInterface.Instance.serializeImgInfo(dapb.dai);
+            //adds the Image with the necessary filepaths to our 'database'
             DataBaseInterface.Instance.AddRow(dapb.dai.d_ID, dapb.dai.thumbnail_path, dapb.dai.image_path, "./metadata/" + dapb.dai.d_ID + ".json");
         }
 
         delegate void setBigImageCallback();
 
+        //sets the new Image in ImageForm and loads it
         private void setBigImage()
         {
             imgForm.dai = curBigImage;
+            imgForm.PicIsLocal = imgIsLocal;
             imgForm.reload_pictureBox();
         }
 
+        /// <summary>
+        /// If the imgForm is closed, it invokes this method, so Form1 knows that is needs to make a new imgForm to show an image in Full Size again
+        /// </summary>
         internal void disposeChild()
         {
             imgForm = null;
@@ -208,17 +253,13 @@ namespace CSharpProjekt
         }*/
         private void loadImageForm()
         {
-            //this.AddOwnedForm(imgform);
             Application.Run(imgForm);
-            //foo f = new foo(this.OwnedForms[0].Activate);
-            //oof o = new oof(this.setVisible);
-            //imgform.Invoke(f);
-            //imgform.Invoke(o, new object[] { imgform });
         }
 
+        //Tries to do an initial authentication
+        //On fail, shows a MessageBox and opens the Gallery Tab
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Trying to authenticate");
             if (!DAInterface.Instance.authenticate())
             {
                 MessageBox.Show("Authentication failed.\nLoading local library now");
