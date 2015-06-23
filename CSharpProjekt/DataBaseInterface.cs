@@ -10,6 +10,11 @@ using System.Data;
 
 namespace CSharpProjekt
 {
+    /// <summary>
+    /// We dont use an actual DataBase, but instead have a Table which we serialize to the current directory
+    /// The table mainly containts filepaths, leading to thumbnails, images and metadata. In other word, we use
+    /// the File System as our local Database
+    /// </summary>
     class DataBaseInterface
     {
         private static DataBaseInterface instance;

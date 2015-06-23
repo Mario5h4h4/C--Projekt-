@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace CSharpProjekt
 {
+    /// <summary>
+    /// EventArgs for OnDownloadFinished
+    /// Used for filling the PictureBoxes with images
+    /// </summary>
     class DownloadFinishedEventArgs : EventArgs
     {
         public int picBoxIndex { get; set; }

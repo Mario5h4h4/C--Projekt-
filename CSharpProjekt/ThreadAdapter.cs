@@ -186,10 +186,12 @@ namespace CSharpProjekt
             List<string> IDs = DataBaseInterface.Instance.getAllIDs();
             for (int i = conWrap.offset; i < IDs.Count && i < conWrap.offset + conWrap.limit; i++)
             {
+                //deserialize Image Info
                 DAImage dai = DAInterface.Instance.deserializeImgInfo(IDs[i]);
                 conWrap.imageList = new List<DAImage>();
                 conWrap.imageList.Add(dai);
                 conWrap.filepaths.Add(dai.thumbnail_path);
+                //filling the PictureBox
                 onDownloadFinished(new DownloadFinishedEventArgs(i - conWrap.offset, dai));
             }
         }

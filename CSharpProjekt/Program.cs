@@ -14,6 +14,7 @@ namespace CSharpProjekt
         [STAThread]
         static void Main()
         {
+            //Initializing our DataBase before even starting the Form1
             DataBaseInterface.init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
