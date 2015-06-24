@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-06-24T17:08:07" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '9d5ce5ee-6685-4229-83e4-4f1b7207d86e' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'a7e3bd85-2fa0-43f7-8849-08ee25d4b71a' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::ContentWrapper' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::ContentWrapper::l' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::ContentWrapper::o' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::filepaths' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::imageList' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::limit' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::offset' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::queryTerm' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::setOffsetAndLimit' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::setOffsetAndLimit::l' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::setOffsetAndLimit::o' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::setOffsetLimitQuery' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::setOffsetLimitQuery::l' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::setOffsetLimitQuery::o' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ContentWrapper::setOffsetLimitQuery::query' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::author' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::category' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::d_ID' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::DAImage' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::DAImage::_author' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::DAImage::_category' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::DAImage::_d_ID' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::DAImage::_thumbnail_url' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::DAImage::_title' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::DAImage::content' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::filetype' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::height' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::image_path' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::img_url' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::thumbnail_path' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::thumbnail_url' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::title' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAImage::width' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::accessToken' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::accToken' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::authenticate' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::checkAuthentication' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::clientID' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::clientSecret' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::DAInterface' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::deserializeImgInfo' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::deserializeImgInfo::dID' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::downloadImage' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::downloadImage::dai' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::downloadImageTemp' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::downloadImageTemp::dai' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::downloadThumbnail' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::downloadThumbnail::dai' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getHotImages' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getHotImages::limit' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getHotImages::offset' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getImagesByTag' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getImagesByTag::limit' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getImagesByTag::offset' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getImagesByTag::tag' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getNewestImages' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getNewestImages::limit' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::getNewestImages::offset' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::instance' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::Instance' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::o' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::serializeImgInfo' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::serializeImgInfo::dai' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAInterface::webclient' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAPictureBox' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAPictureBox::dai' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DAPictureBox::DAPictureBox' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::AddRow' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::AddRow::dID' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::AddRow::img' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::AddRow::md' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::AddRow::thumb' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::commit' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::commit::count' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::DataBaseInterface' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::dsImages' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getAllIDs' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getImage' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getImage::dID' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getMetadata' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getMetadata::dID' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getRow' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getRow::dID' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getThumbnail' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::getThumbnail::dID' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::init' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::instance' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::Instance' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::mTable' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DataBaseInterface::readWriteLock' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::disposeCallback' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::disposeCallback::Invoke' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedEventArgs' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedEventArgs::dai' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedEventArgs::DownloadFinishedEventArgs' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedEventArgs::DownloadFinishedEventArgs::d' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedEventArgs::DownloadFinishedEventArgs::i' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedEventArgs::picBoxIndex' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedHandler' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedHandler::Invoke' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedHandler::Invoke::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::DownloadFinishedHandler::Invoke::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::button1' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::button1_Click' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::button1_Click::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::button1_Click::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::clickSaveImage' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::clickSaveImage::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::clickSaveImage::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::clickViewImage' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::clickViewImage::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::clickViewImage::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::components' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::ConWraps' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::curBigImage' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::Dispose' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::Dispose::disposing' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::disposeChild' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::dropDownMenu' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::elemCount' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::Form1' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::Form1_Load' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::Form1_Load::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::Form1_Load::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::gallery_tab_page' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::hot_flow_layout' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::hot_tab_page' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::imgForm' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::imgIsLocal' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::InitializeComponent' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::LayoutMap' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::loadImageForm' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::local_flow_layout' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::locConWrap' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::locDropDown' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::locOffset' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::locPBFiller' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::locPicBoxes' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::locThrAdapter' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::locThrStart' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::newest_flow_layout' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::newest_tab_page' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::offsets' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::onFormClose' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::picBoxes' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::picBoxFiller' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::removeWhitespace' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::removeWhitespace::input' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::search_flow_layout' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::setBigImage' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::tabbed_views' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::tabbed_views_SelectedIndexChanged' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::tabbed_views_SelectedIndexChanged::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::tabbed_views_SelectedIndexChanged::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::tag_search_tab_page' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::textBox1' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::textBox1_KeyPress' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::textBox1_KeyPress::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::textBox1_KeyPress::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::thrAdapter' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Form1::thrStarts' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::components' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::dai' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::Dispose' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::Dispose::disposing' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::disposeChild' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::disposeParent' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::ImageForm' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::ImageForm::dai' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::ImageForm::parent' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::ImageForm_Load' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::ImageForm_Load::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::ImageForm_Load::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::InitializeComponent' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::parent' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::PicIsLocal' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::pictureBox1' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ImageForm::reload_pictureBox' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::JsonReceiver' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::JsonReceiver::Content' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::JsonReceiver::JsonAccessToken' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::onClose' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::onClose::Invoke' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller::DownloadFinished' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller::DownloadFinished::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller::DownloadFinished::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller::PBs' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller::PictureBoxFiller' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller::PictureBoxFiller::pbArray' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller::PictureBoxFiller::tAdapt' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::PictureBoxFiller::ta' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Program' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::Program::Main' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::setBigImageCallback' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::setBigImageCallback::Invoke' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Medium" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter' -  (Class)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::conWrap' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::downLoadFinished' -  (Property)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::getHot' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::getLocal' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::getNew' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::getSearch' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::onDownloadFinished' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::onDownloadFinished::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::ThreadAdapter' -  (Operation)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::CSharpProjekt::ThreadAdapter::ThreadAdapter::cw' -  (Parameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Collections' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Collections::Generic::Dictionary' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Collections::Generic::Dictionary&lt;Int32‎, FlowLayoutPanel‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Collections::Generic::List&lt;DAImage‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Collections::Generic::List&lt;String‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::ComponentModel' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::ComponentModel::IContainer' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Data' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Data::DataSet' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Data::DataTable' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::EventArgs' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Net' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Net::WebClient' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Object' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Threading' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Threading::ReaderWriterLockSlim' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Threading::ThreadStart' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms' -  (Package)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::Button' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::ContextMenu' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::FlowLayoutPanel' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::Form' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::KeyPressEventArgs' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::PictureBox' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::TabControl' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::TabPage' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'c--_Modeling::System::Windows::Forms::TextBox' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'fe3bfd30-891c-4a95-b74b-4731ade1ada5' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: c--_Modeling::CSharpProjekt::DAInterface to c--_Modeling::CSharpProjekt::DAInterface (Association)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: c--_Modeling::CSharpProjekt::DAPictureBox to c--_Modeling::System::Windows::Forms::PictureBox (Generalization)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: c--_Modeling::CSharpProjekt::DataBaseInterface to c--_Modeling::CSharpProjekt::DataBaseInterface (Association)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: c--_Modeling::CSharpProjekt::DownloadFinishedEventArgs to c--_Modeling::CSharpProjekt::DAImage (Association)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: c--_Modeling::CSharpProjekt::DownloadFinishedEventArgs to c--_Modeling::System::EventArgs (Generalization)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: c--_Modeling::CSharpProjekt::Form1 to c--_Modeling::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: c--_Modeling::CSharpProjekt::ImageForm to c--_Modeling::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: c--_Modeling::System::Windows::Forms::KeyPressEventArgs to c--_Modeling::System::EventArgs (Generalization)" />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="High" Text="(15) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="High" Text="(24) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-06-24T17:08:16" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>

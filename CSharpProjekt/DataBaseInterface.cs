@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
-using Windows.Notifications;
 
 namespace CSharpProjekt
 {

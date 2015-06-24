@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="6bfcd7db-9b2d-4c05-a7ad-2b4099f6a7d6"
+  name="JsonReceiver"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="9956d462-a835-48bb-84eb-d5a3dbb2d433"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCSharpProjekt.JsonReceiver"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="6fb41a8d-6090-4005-98c3-214d720b9cd0"
+        name="Content"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="bb039c59-7e91-4f8c-9d40-6535ff5d8870"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMario%2FDocuments%2FGitHub%2FC--Projekt-%2FCSharpProjekt%2Fbin%2FDebug%2FCSharpProjekt.exe Namespace%3DCSharpProjekt.JsonReceiver Type%3DContent"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ba3d4be3-b48b-4a4f-a546-a86b16276c20"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="453e47cf-e71e-43f1-bd8b-84127bdbc78e">
+                <propertyInstance
+                  Id="27a2e668-0458-4ba8-a134-ae0d97b11cd1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4bf60a3f-5890-4566-bfae-dca0beb44be2">
+                <propertyInstance
+                  Id="813fadca-d9f2-4a30-afb5-45b84d7220bd"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="10cc99e4-928e-4627-bdd1-f29e64bf9821">
+                <propertyInstance
+                  Id="41838111-d234-459f-935f-94d5b3c14eaf"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3caa3a5d-ceeb-4a2e-bbb6-96ebd001508e">
+                <propertyInstance
+                  Id="e507f0ba-cdbe-4cf8-9e90-1da733276b5c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b72be54-6281-4a84-8677-e658886394f7">
+                <propertyInstance
+                  Id="97996c99-615b-40e1-9de2-1c1ddac11d48"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="052a235c-c550-4280-8d3b-ef2714ad5016"
+        name="JsonAccessToken"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3a739ad4-d5bd-4daa-ba1b-688f04fe522d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMario%2FDocuments%2FGitHub%2FC--Projekt-%2FCSharpProjekt%2Fbin%2FDebug%2FCSharpProjekt.exe Namespace%3DCSharpProjekt.JsonReceiver Type%3DJsonAccessToken"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ed08acc0-5023-417c-8b93-9b2bb0b38d1a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="28a53ec3-9618-4196-81b2-97434305e14f">
+                <propertyInstance
+                  Id="9ee9cedc-9548-4e33-bcfc-c54b7ed7d543"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6482f5f1-a56f-4703-b8b1-1057d444dd46">
+                <propertyInstance
+                  Id="e44c2aea-3802-4a18-ada2-0ff6f31070ca"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7a65fd8d-af62-4376-8f22-451dc2896a5d">
+                <propertyInstance
+                  Id="a1d3a831-a1ca-43df-bae1-099efd2ffa65"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="94bb45a7-c390-43e7-b4cc-5a95a151daeb">
+                <propertyInstance
+                  Id="af3da404-dddb-4617-b4ed-b750b998d4c8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5bfd234d-9d01-463f-8950-66fde9eec116">
+                <propertyInstance
+                  Id="123ae4de-7ee8-45e8-b3c5-20e8cf355288"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
